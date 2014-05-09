@@ -70,6 +70,7 @@
 				shareByEmail(url, message, linkback);
 				break;
 		}
+		$('.card-share-download').attr('href', url).removeClass('inactive');
 	}
 
 

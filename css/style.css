@@ -175,3 +175,13 @@ body {
 	height: 43px;
 	background: url(../i/googleplus.png) no-repeat;
 }
+.huffpost-wrapper .card-share-download {
+  width: 118px;
+  height: 43px;
+  background-color: #303849;
+  border-radius: 4px;
+  text-indent: 0px !important;
+}
+.huffpost-wrapper .card-share-download.inactive {
+  display: none !important;
+}
