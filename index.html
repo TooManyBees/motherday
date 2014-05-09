@@ -40,6 +40,7 @@
 <script type="text/javascript">
 	(function($){
 		$(document).ready(function() {
+			window.initMothersDayCard();
 			$('.card-share-btn').on('click', function(e) {
 				e.preventDefault();
 				uploadAndShare( $(this).data('service'), $('.canvasWrapper canvas')[0], $('.huffpost-mother').val());
