@@ -28,7 +28,7 @@ body {
 	width: 900px;
 	height: 500px;
       position: relative;
-      margin: 40px auto 40px auto;
+      margin: auto;
       -webkit-perspective: 800px;
          -moz-perspective: 800px;
            -o-perspective: 800px;

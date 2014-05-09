@@ -21,7 +21,8 @@
             }
         }
 
-        $('.huffpost-card-share').click(function(){
+        $('.huffpost-card-share').click(function(e){
+            e.preventDefault();
             //$('.huffpost-card .front img').css('visibility', '');
             $('.huffpost-card-share').hide();
             html2canvas($('.huffpost-card .front')[0], {
