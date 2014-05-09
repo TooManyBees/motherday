@@ -155,6 +155,11 @@ body {
 	text-indent: 30px;
 	margin-bottom: 20px;
 }
+.huffpost-wrapper .email {
+  width: 118px;
+  height: 43px;
+  background: url(../i/email.png) no-repeat;
+}
 .huffpost-wrapper .facebook {
 	width: 118px;
 	height: 43px;

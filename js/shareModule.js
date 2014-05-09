@@ -58,15 +58,16 @@
 	}
 
 	function share(dest, url, message) {
+		var linkback = "http://m.huffpost.com/us/entry/12345";
 		switch (dest) {
 			case 'facebook':
-				shareWithFacebook(url, message);
+				shareWithFacebook(url, message, linkback);
 				break;
 			case 'twitter':
-				shareWithTwitter(url, message);
+				shareWithTwitter(url, message, linkback);
 				break;
 			case 'email':
-				shareByEmail(url, message);
+				shareByEmail(url, message, linkback);
 				break;
 		}
 	}
@@ -122,24 +123,22 @@
 		window.open(twitterURL, 'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=300,height=500');
 	}
 
-	function shareWithFacebook (imageUrl, description) {
+	function shareWithFacebook (imageUrl, description, linkback) {
 		FB.ui({
 		  method: 'feed',
 		  picture: imageUrl,
-		  description: description,
-		  caption: 'Send your mom a card.',
-		  link: "http://www.huffingtonpost.com"
+		  description: linkback,
+		  caption: "Send your mom a card this Mother's Day, courtesy of The Huffington Post.",
+		  link: imageUrl
 		}, function(response){
 			console.log(response);
 		});
 	}
 
-	function shareByEmail (url, message) {
+	function shareByEmail (url, message, linkback) {
 		var emailIframe = $('#card-email-helper')[0];
-
-		var entryUrl = "http://m.huffpost.com/us/entry/12345";
 		var subject = encodeURIComponent("Happy Mother's Day");
-		var body = encodeURIComponent(message + "\n\nSomebody who loves you made a card for you here:\n\n" + url + "\n\nMake your own at " + entryUrl);
+		var body = encodeURIComponent("Somebody who loves you made a card for you here:\n\n" + url + "\n\nMake your own at " + linkback);
 		var mailtoURL = 'mailto:?' + 'subject=' + subject + '&body=' + body;
 		emailIframe.contentWindow.location = 'about:blank';
 		emailIframe.contentWindow.location = mailtoURL;
