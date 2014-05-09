@@ -128,8 +128,9 @@
 		FB.ui({
 		  method: 'feed',
 		  picture: imageUrl,
-		  description: linkback,
-		  caption: "Send your mom a card this Mother's Day, courtesy of The Huffington Post.",
+		  description: description,
+		  caption: "Courtesy of The Huffington Post. " + linkback,
+		  name: "Send your mom a card this Mother's Day.",
 		  link: imageUrl
 		}, function(response){
 			console.log(response);
