@@ -1,4 +1,18 @@
 (function($) {
+    if ($.browser.msie) {
+      $("<link/>", {
+           rel: "stylesheet",
+           type: "text/css",
+           href: "css/all-ie-only.css"
+        }).appendTo("head");
+    } else {
+        $("<link/>", {
+           rel: "stylesheet",
+           type: "text/css",
+           href: "css/style.css"
+        }).appendTo("head");
+    }
+
     window.initMothersDayCard = function() {
 
         var textArea = $('.huffpost-mother')[0];
@@ -47,6 +61,7 @@
                 canvas.onmousedown = function(e) {
                     painting = true;
                     ctx.fillStyle = "#431f26";
+                    console.log(e);
                     lastX = e.layerX * 900 / 562;
                     lastY = e.layerY * 900 / 562;
                 };

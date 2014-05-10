@@ -2,6 +2,9 @@ body {
 	font-family: 'Alex Brush', cursive;
 	margin: 0;
 	padding: 0;
+	width: 900px;
+	height: 500px;
+	overflow: hidden;
 }
 .huffpost-wrapper input[type=text], .huffpost-wrapper textarea {
   -webkit-transition: all 0.30s ease-in-out;
@@ -13,7 +16,7 @@ body {
   border: 1px solid rgba(255,255,255,1);
   color: #431f26;
   text-align: center;
-  margin-top: -340px;
+  margin-top: 160px;
   margin-left: 100px;
   width: 700px;
 }
@@ -66,7 +69,7 @@ body {
               backface-visibility: hidden;
 }
 .huffpost-card .front {
-	/*background: url(http://wentin.co/bg.png);*/
+	background: url(../i/bg.gif);
 	box-sizing: border-box;
 	transform-style: preserve-3d;
 	-webkit-transition: all 1s ease;
@@ -74,8 +77,32 @@ body {
 	-ms-transition: all 1s ease;
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
+	backface-visibility:hidden;
 }
 .huffpost-card .front img {
+}
+html.ie10 .huffpost-card .back {
+	text-align: center;
+	background-color: #e2bcc2;
+	display: none;
+	-webkit-transform: rotateY( 0deg );
+	 -moz-transform: rotateY( 0deg );
+	   -o-transform: rotateY( 0deg );
+	      transform: rotateY( 0deg );
+}
+
+html.ie10 .huffpost-card.flip {
+      -webkit-transform: translateX( 0 ) rotateY( 0deg );
+         -moz-transform: translateX( 0 ) rotateY( 0deg );
+           -o-transform: translateX( 0 ) rotateY( 0deg );
+              transform: translateX( 0 ) rotateY( 0deg );
+}
+
+html.ie10 .huffpost-card.flip .back {
+	display: block;
+}
+html.ie10 .huffpost-card.flip .front {
+	display: none;
 }
 .huffpost-card .back {
 	text-align: center;
@@ -84,6 +111,7 @@ body {
 	 -moz-transform: rotateY( 180deg );
 	   -o-transform: rotateY( 180deg );
 	      transform: rotateY( 180deg );
+backface-visibility:hidden;
 }
 .huffpost-card .back .left {
 	width: 630px;
@@ -130,11 +158,13 @@ body {
 	height: 50px;
 	background: url(../i/next.png) no-repeat;
 	cursor: pointer;
-	margin: -80px auto;
+	margin: 20px auto;
 	position: relative;
 }
 .huffpost-wrapper .canvasWrapper {
-	margin-top: 0 auto;
+	margin: 0 auto;
+	width: 562px;
+	position: relative;
 }
 .huffpost-wrapper canvas {
 	width: 562px;
@@ -142,10 +172,9 @@ body {
 }
 .huffpost-card .back .right {
 	float: left;
-	width: 270px;
+	width: 190px;
 	background: url(../i/stamp.png) no-repeat 20px 20px;
 	padding: 200px 0 0 76px;
-	box-sizing: border-box;
 }
 .huffpost-card .back .right a {
 	display: block;
