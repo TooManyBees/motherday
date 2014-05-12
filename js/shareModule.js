@@ -58,7 +58,7 @@
 	}
 
 	function share(dest, url, message) {
-		var linkback = "http://m.huffpost.com/us/entry/12345";
+		var linkback = "http://m.huffpost.com/us/entry/5302554";
 		switch (dest) {
 			case 'facebook':
 				shareWithFacebook(url, message, linkback);
